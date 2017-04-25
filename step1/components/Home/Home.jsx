@@ -10,11 +10,18 @@ export default class Home extends Component {
 		};
 	}
 	componentDidMount(){
+		if (window.userDetails) {
+			this.setState({
+				userData: window.userDetails
+			});
+			return ;
+		}
 		fetch('https://randomuser.me/api/?results=10')
 			.then(res=>{
 				return res.json();
 			})
 			.then(data=>{
+				window.userDetails = data;
 				this.setState({
 					userData: data,
 				});

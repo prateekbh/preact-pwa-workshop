@@ -1,6 +1,7 @@
 const webpack = require("webpack");
 const path = require('path');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const SwBuildWebpackPlugin = require('./plugin');
 
 const prod = process.argv.indexOf('-p') !== -1;
 const extractCSS = new ExtractTextPlugin('../css/[name].css');
@@ -37,7 +38,7 @@ const config = {
       ]
   },
   plugins: [
-      extractCSS,
+      extractCSS
   ]
 };
 

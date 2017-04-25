@@ -13,6 +13,9 @@ class App extends Component{
 	getHome(){
 		return System.import('./components/Home/Home.jsx').then(module => module.default);
 	}
+	getProfileComponent(){
+		return System.import('./components/UserDetails/UserDetails.jsx').then(module => module.default);
+	}
 	render(){
 		return (
 			<div>
@@ -24,6 +27,9 @@ class App extends Component{
 								People around me
 							</Toolbar.Title>
 						</Toolbar.Section>
+						<Toolbar.Section align-end={true}>
+                <Icon>notifications</Icon>
+              </Toolbar.Section>
 					</Toolbar.Row>
 				</Toolbar>
 				<Router>

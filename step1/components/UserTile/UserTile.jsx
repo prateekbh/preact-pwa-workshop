@@ -1,4 +1,5 @@
 import { h, Component } from 'preact';
+import {route} from 'preact-router';
 import Card from 'preact-material-components/Card';
 import './UserTile.css';
 const msgs=[
@@ -26,7 +27,9 @@ export default class UserTile extends Component {
 						}
 					</Card.SupportingText>
 					<Card.Actions>
-						<Card.Action ripple={true}>View Profile</Card.Action>
+						<Card.Action ripple={true} onClick={e=>{
+								route('/profile/' + this.props.user.email);
+							}}>View Profile</Card.Action>
 					</Card.Actions>
 				</Card>
 			</div>

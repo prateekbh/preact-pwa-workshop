@@ -46,6 +46,7 @@
     "precss": "^1.4.0",
     "redux": "^3.6.0",
     "style-loader": "^0.16.0",
+    "sw-build": "0.0.18",
     "webpack": "^2.3.2"
   },
   "dependencies": {
