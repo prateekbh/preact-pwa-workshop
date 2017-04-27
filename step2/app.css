@@ -1,0 +1,8 @@
+body{
+	margin: 0px;
+	padding: 0px;
+}
+
+.mdc-toolbar__title{
+	margin-left: 16px;
+}

@@ -6,9 +6,15 @@
     <title></title>
 		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="/public/css/app.css">
+		<link rel="manifest" href="/manifest.json">
 </head>
 <body>
     <div class="app"></div>
     <script src="/public/js/app.js"></script>
+		<script>
+			if (navigator.serviceWorker) {
+				navigator.serviceWorker.register('/sw.js');
+			}
+		</script>
 </body>
 </html>
