@@ -1,16 +1,15 @@
 const webpack = require("webpack");
 const path = require('path');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const SwBuildWebpackPlugin = require('./plugin');
 
 const prod = process.argv.indexOf('-p') !== -1;
 const extractCSS = new ExtractTextPlugin('../css/[name].css');
 const config = {
   entry: {
-    app: './step3/app.js'
+    app: './step4/app.js'
   },
   output: {
-    path: __dirname + '/step1/public/js',
+    path: __dirname + '/step4/public/js',
     publicPath: '/public/js/',
     filename: '[name].js',
   },
@@ -38,7 +37,7 @@ const config = {
       ]
   },
   plugins: [
-      extractCSS
+      extractCSS,
   ]
 };
 
