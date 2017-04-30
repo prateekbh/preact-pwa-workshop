@@ -1,0 +1,6 @@
+.tile-user{
+	margin: 32px 16px;
+	.username{
+		text-transform: capitalize;
+	}
+}

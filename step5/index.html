@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="/public/css/app.css">
+		<link rel="manifest" href="/manifest.json">
+</head>
+<body>
+    <div class="app"></div>
+    <script src="/public/js/app.js"></script>
+		<script>
+			if (navigator.serviceWorker) {
+				navigator.serviceWorker.register('/sw.js').then((swRegistration)=>{
+					console.log('sw registered');
+					document.body.addEventListener('register:push',()=>{
+						console.log('listeneing');
+						swRegistration.pushManager.subscribe({userVisibleOnly: true}).then(()=>{
+							console.log('push Registered');
+						}).catch((err)=>{
+							console.log('push Registeration failed', err);
+						});
+					});
+				});
+			}
+		</script>
+</body>
+</html>
