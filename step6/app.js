@@ -62,9 +62,7 @@ class App extends Component{
 							</Toolbar.Title>
 						</Toolbar.Section>
 						<Toolbar.Section align-end={true}>
-                <Icon onClick={()=>{
-
-									}}>notifications</Icon>
+                <Icon onClick={this.getNotifications.bind(this)}>notifications</Icon>
               </Toolbar.Section>
 					</Toolbar.Row>
 				</Toolbar>

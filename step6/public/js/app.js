@@ -2690,7 +2690,7 @@ var App = function (_Component) {
 							{ 'align-end': true },
 							__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 								__WEBPACK_IMPORTED_MODULE_4_preact_material_components_Icon__["a" /* default */],
-								{ onClick: function onClick() {} },
+								{ onClick: this.getNotifications.bind(this) },
 								'notifications'
 							)
 						)

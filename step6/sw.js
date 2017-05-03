@@ -1,5 +1,6 @@
 importScripts('/sw-toolbox.js');
-
+importScripts('https://www.gstatic.com/firebasejs/3.6.9/firebase-app.js');
+importScripts('https://www.gstatic.com/firebasejs/3.6.9/firebase-messaging.js');
 
 toolbox.precache([
 	'/',
@@ -22,3 +23,23 @@ self.addEventListener('push', (event)=> {
 	};
 	event.waitUntil(self.registration.showNotification(title, options));
 });
+
+firebase.initializeApp({
+  'messagingSenderId': '678578574774'
+});
+const messaging = firebase.messaging();
+
+messaging.setBackgroundMessageHandler(async function(payload) {
+  console.log('[firebase-messaging-sw.js] Received background message ', payload);
+  // Customize notification here
+  const notificationTitle = 'Pipsum!';
+  const notificationOptions = {
+    body: 'Firebase notif says: ' + payload.data.msg,
+    icon: '/images/icon.png'
+  };
+
+  return self.registration.showNotification(notificationTitle,
+      notificationOptions);
+});
+
+
