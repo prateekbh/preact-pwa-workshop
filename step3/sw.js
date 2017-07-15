@@ -3,6 +3,7 @@ var urlsToCache = [
   '/',
   '/public/css/app.css',
 	'https://fonts.googleapis.com/icon?family=Material+Icons',
+	'https://fonts.gstatic.com/s/materialicons/v22/2fcrYFNaTjcS6g4U3t-Y5UEw0lE80llgEseQY3FEmqw.woff2',
   '/public/js/app.js',
 	'/public/js/0.js'
 ];
@@ -51,3 +52,6 @@ if(event.request.url.indexOf('https://randomuser.me/api/?results=') > -1) {
 		);
 	}
 */
+
+self.addEventListener('install', () => self.skipWaiting());
+self.addEventListener('activate', () => self.clients.claim());

@@ -29,6 +29,7 @@ class App extends Component{
 						</Toolbar.Section>
 						<Toolbar.Section align-end={true}>
                 <Icon onClick={()=>{
+									console.log('click');
 										document.body.dispatchEvent(new Event('register:push'));
 									}}>notifications</Icon>
               </Toolbar.Section>
